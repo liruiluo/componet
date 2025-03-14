@@ -446,7 +446,7 @@ if __name__ == "__main__":
                 writer.add_scalar("losses/qf_loss", qf_loss.item() / 2.0, global_step)
                 writer.add_scalar("losses/actor_loss", actor_loss.item(), global_step)
                 writer.add_scalar("losses/alpha", alpha, global_step)
-                print("SPS:", int(global_step / (time.time() - start_time)))
+                # print("SPS:", int(global_step / (time.time() - start_time)))
                 writer.add_scalar(
                     "charts/SPS",
                     int(global_step / (time.time() - start_time)),
