@@ -36,13 +36,13 @@ class Args:
     """if toggled, `torch.backends.cudnn.deterministic=False`"""
     cuda: bool = True
     """if toggled, cuda will be enabled by default"""
-    track: bool = False
+    track: bool = True
     """if toggled, this experiment will be tracked with Weights and Biases"""
     wandb_project_name: str = "cw-sac"
     """the wandb's project name"""
     wandb_entity: str = None
     """the entity (team) of wandb's project"""
-    capture_video: bool = False
+    capture_video: bool =True
     """whether to capture videos of the agent performances (check out `videos` folder)"""
 
     # Algorithm specific arguments
@@ -84,8 +84,9 @@ class Args:
 
 def make_env(task_id):
     def thunk():
-        env = get_task(task_id)
+        env = get_task(task_id,render=True)
         env = gym.wrappers.RecordEpisodeStatistics(env)
+        env = gym.wrappers.RecordVideo(env, f"videos/{run_name}", step_trigger=lambda x: x % 200000 == 0)
         return env
 
     return thunk

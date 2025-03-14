@@ -92,6 +92,7 @@ or,
 
 ```setup
 pip install -r experiments/meta-world/requirements.txt
+pip install moviepy
 ```
 
 Note that the `atari` experiments use the `ALE` environments from the

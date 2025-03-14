@@ -29,7 +29,7 @@ def get_task(task_id, render=False):
     env = env_cls(seed=np.random.randint(0, 1024))
 
     if render:
-        env.render_mode = "human"
+        env.render_mode = "rgb_array"
     env._freeze_rand_vec = False
 
     return env
