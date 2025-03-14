@@ -18,12 +18,12 @@ def parse_args():
             "prognet",
             "packnet",
         ],
-        required=True,
+        default="componet",
     )
-    parser.add_argument("--seed", type=int, required=True)
+    parser.add_argument("--seed", type=int, default=0)
     parser.add_argument("--no-run", default=False, action="store_true")
 
-    parser.add_argument("--start-mode", type=int, required=True)
+    parser.add_argument("--start-mode", type=int, default=0)
     return parser.parse_args()
 
 

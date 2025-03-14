@@ -108,6 +108,9 @@ options (just change the environment and task options if needed).
 All of the CLI options have the default value that was used in the
 paper ☺️.
 
+python run_experiments.py --algorithm simple
+python run_experiments.py
+
 ## License 🐃
 
 This repository is distributed under the terms of the GLPv3
