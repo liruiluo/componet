@@ -17,6 +17,7 @@ from typing import Literal, Optional, Tuple
 from models import shared, SimpleAgent, CompoNetAgent, PackNetAgent, ProgressiveNetAgent
 from tasks import get_task, get_task_name
 from stable_baselines3.common.buffers import ReplayBuffer
+from tqdm import tqdm
 
 
 @dataclass
@@ -314,7 +315,7 @@ if __name__ == "__main__":
 
     # TRY NOT TO MODIFY: start the game
     obs, _ = envs.reset(seed=args.seed)
-    for global_step in range(args.total_timesteps):
+    for global_step in tqdm(range(args.total_timesteps), desc="Training"):  # 添加进度条
         # ALGO LOGIC: put action logic here
         if global_step < args.random_actions_end:
             actions = np.array(
@@ -337,9 +338,9 @@ if __name__ == "__main__":
         # TRY NOT TO MODIFY: record rewards for plotting purposes
         if "final_info" in infos:
             for i, info in enumerate(infos["final_info"]):
-                print(
-                    f"global_step={global_step}, episodic_return={info['episode']['r']}, success={info['success']}"
-                )
+                # print(
+                #     f"global_step={global_step}, episodic_return={info['episode']['r']}, success={info['success']}"
+                # )
                 writer.add_scalar(
                     "charts/episodic_return", info["episode"]["r"], global_step
                 )

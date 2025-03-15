@@ -91,8 +91,11 @@ pip install -r experiments/atari/requirements.txt
 or,
 
 ```setup
+conda create -n componet python=3.9
 pip install -r experiments/meta-world/requirements.txt
 pip install moviepy
+pip install colorama
+pip install --upgrade tyro
 ```
 
 Note that the `atari` experiments use the `ALE` environments from the
