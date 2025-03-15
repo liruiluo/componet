@@ -111,9 +111,9 @@ options (just change the environment and task options if needed).
 
 All of the CLI options have the default value that was used in the
 paper ☺️.
-
-python run_experiments.py --algorithm simple
-python run_experiments.py
+cd experiments/meta-world
+nohup python run_experiments.py --algorithm simple 2>&1 | tee output.log &
+nohup python run_experiments.py 2>&1 | tee output.log &
 
 ## License 🐃
 
