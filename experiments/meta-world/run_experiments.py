@@ -3,7 +3,6 @@ import argparse
 import random
 from tasks import tasks
 
-
 def parse_args():
     parser = argparse.ArgumentParser()
 

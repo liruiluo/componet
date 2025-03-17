@@ -91,7 +91,7 @@ pip install -r experiments/atari/requirements.txt
 or,
 
 ```setup
-conda create -n componet python=3.9
+conda create -n componet python=3.11
 pip install -r experiments/meta-world/requirements.txt
 pip install moviepy
 pip install colorama
